@@ -1,0 +1,211 @@
+/* *** EVALUATION *** */
+
+
+/**** FILE 'F:\S12XE_new\frtos_xet256mma\Project_1\RTOS\include\FreeRTOS.h' */
+
+
+/*       11 */ 
+
+/**** FILE 'F:\S12XE_new\frtos_xet256mma\Project_1\RTOS\include\FreeRTOS.h' */
+
+
+/*       77 */ 
+
+/**** FILE 'stddef.h' */
+
+
+/*       22 */  typedef unsigned int size_t ;
+/*       35 */  typedef signed int ptrdiff_t ;
+/*       44 */  typedef unsigned char wchar_t ;
+/*       56 */  typedef unsigned long clock_t ;
+/*       58 */  typedef unsigned long time_t ;
+/*       75 */ 
+
+/**** FILE 'F:\S12XE_new\frtos_xet256mma\Project_1\RTOS\include\FreeRTOS.h' */
+
+
+/*       99 */ 
+
+/**** FILE 'FreeRTOSConfig.h' */
+
+
+/*       74 */ 
+
+/**** FILE 'hidef.h' */
+
+
+/*       20 */ 
+
+/**** FILE 'default2.sgm' */
+
+
+/*       30 */ 
+
+/**** FILE 'hidef.h' */
+
+
+/*       28 */ 
+
+/**** FILE 'stdtypes.h' */
+
+
+/*       26 */  typedef void ( * PROC ) ( void ) ;
+/*       30 */  typedef unsigned char Byte ;
+/*       31 */  typedef signed char sByte ;
+/*       61 */  typedef unsigned int Word ;
+/*       62 */  typedef signed int sWord ;
+/*       88 */  typedef unsigned long LWord ;
+/*       89 */  typedef signed long sLWord ;
+/*      102 */  typedef unsigned char uchar ;
+/*      104 */  typedef unsigned int uint ;
+/*      106 */  typedef unsigned long ulong ;
+/*      109 */  typedef unsigned long long ullong ;
+/*      113 */  typedef signed char schar ;
+/*      115 */  typedef signed int sint ;
+/*      117 */  typedef signed long slong ;
+/*      120 */  typedef signed long long sllong ;
+/*      137 */  typedef sWord enum_t ;
+/*      153 */  typedef int Bool ;
+/*      176 */ 
+
+/**** FILE 'hidef.h' */
+
+
+/*       30 */  #pragma NO_STRING_CONSTR
+/*      116 */  extern char __SEG_END_SSTACK [ ] ;
+/*      125 */  extern const unsigned char _PowOfTwo_8 [ 8 ] ;
+/*      127 */  extern const unsigned short _PowOfTwo_16 [ 16 ] ;
+/*      129 */  extern const unsigned long _PowOfTwo_32 [ 32 ] ;
+/*      154 */ 
+
+/**** FILE 'FreeRTOSConfig.h' */
+
+
+/*      133 */ 
+
+/**** FILE 'F:\S12XE_new\frtos_xet256mma\Project_1\RTOS\include\FreeRTOS.h' */
+
+
+/*      102 */ 
+
+/**** FILE 'projdefs.h' */
+
+
+/*       77 */  typedef void ( * TaskFunction_t ) ( void * ) ;
+/*      164 */ 
+
+/**** FILE 'F:\S12XE_new\frtos_xet256mma\Project_1\RTOS\include\FreeRTOS.h' */
+
+
+/*      105 */ 
+
+/**** FILE 'portable.h' */
+
+
+/*       88 */ 
+
+/**** FILE 'deprecated_definitions.h' */
+
+
+/*      324 */ 
+
+/**** FILE 'portable.h' */
+
+
+/*       95 */ 
+
+/**** FILE 'portmacro.h' */
+
+
+/*       93 */  typedef uint8_t StackType_t ;
+/*       94 */  typedef signed char BaseType_t ;
+/*       95 */  typedef unsigned char UBaseType_t ;
+/*       98 */  typedef uint16_t TickType_t ;
+/*      247 */ 
+
+/**** FILE 'portable.h' */
+
+
+/*      134 */ 
+
+/**** FILE 'mpu_wrappers.h' */
+
+
+/*      180 */ 
+
+/**** FILE 'portable.h' */
+
+
+/*      144 */  StackType_t * pxPortInitialiseStack ( StackType_t * pxTopOfStack , TaskFunction_t pxCode , void * pvParameters ) ;
+/*      148 */  typedef struct HeapRegion
+/*      149 */  {
+/*      150 */  uint8_t * pucStartAddress ;
+/*      151 */  size_t xSizeInBytes ;
+/*      152 */  } HeapRegion_t ;
+/*      165 */  void vPortDefineHeapRegions ( const HeapRegion_t * const pxHeapRegions ) ;
+/*      171 */  void * pvPortMalloc ( size_t xSize ) ;
+/*      172 */  void vPortFree ( void * pv ) ;
+/*      173 */  void vPortInitialiseBlocks ( void ) ;
+/*      174 */  size_t xPortGetFreeHeapSize ( void ) ;
+/*      175 */  size_t xPortGetMinimumEverFreeHeapSize ( void ) ;
+/*      181 */  BaseType_t xPortStartScheduler ( void ) ;
+/*      188 */  void vPortEndScheduler ( void ) ;
+/*      210 */ 
+
+/**** FILE 'F:\S12XE_new\frtos_xet256mma\Project_1\RTOS\include\FreeRTOS.h' */
+
+
+/*      873 */  struct xSTATIC_LIST_ITEM
+/*      874 */  {
+/*      875 */  TickType_t xDummy1 ;
+/*      876 */  void * pvDummy2 [ 4 ] ;
+/*      877 */  } ;
+/*      878 */  typedef struct xSTATIC_LIST_ITEM StaticListItem_t ;
+/*      881 */  struct xSTATIC_MINI_LIST_ITEM
+/*      882 */  {
+/*      883 */  TickType_t xDummy1 ;
+/*      884 */  void * pvDummy2 [ 2 ] ;
+/*      885 */  } ;
+/*      886 */  typedef struct xSTATIC_MINI_LIST_ITEM StaticMiniListItem_t ;
+/*      889 */  typedef struct xSTATIC_LIST
+/*      890 */  {
+/*      891 */  UBaseType_t uxDummy1 ;
+/*      892 */  void * pvDummy2 ;
+/*      893 */  StaticMiniListItem_t xDummy3 ;
+/*      894 */  } StaticList_t ;
+/*      909 */  typedef struct xSTATIC_TCB
+/*      910 */  {
+/*      911 */  void * pxDummy1 ;
+/*      915 */  StaticListItem_t xDummy3 [ 2 ] ;
+/*      916 */  UBaseType_t uxDummy5 ;
+/*      917 */  void * pxDummy6 ;
+/*      918 */  uint8_t ucDummy7 [ ( 1 ) ] ;
+/*      944 */  uint32_t ulDummy18 ;
+/*      945 */  uint8_t ucDummy19 ;
+/*      951 */  } StaticTask_t ;
+/*      967 */  typedef struct xSTATIC_QUEUE
+/*      968 */  {
+/*      969 */  void * pvDummy1 [ 3 ] ;
+/*      971 */  union
+/*      972 */  {
+/*      973 */  void * pvDummy2 ;
+/*      974 */  UBaseType_t uxDummy2 ;
+/*      975 */  } u ;
+/*      977 */  StaticList_t xDummy3 [ 2 ] ;
+/*      978 */  UBaseType_t uxDummy4 [ 3 ] ;
+/*      979 */  uint8_t ucDummy5 [ 2 ] ;
+/*      994 */  } StaticQueue_t ;
+/*      995 */  typedef StaticQueue_t StaticSemaphore_t ;
+/*     1011 */  typedef struct xSTATIC_EVENT_GROUP
+/*     1012 */  {
+/*     1013 */  TickType_t xDummy1 ;
+/*     1014 */  StaticList_t xDummy2 ;
+/*     1024 */  } StaticEventGroup_t ;
+/*     1040 */  typedef struct xSTATIC_TIMER
+/*     1041 */  {
+/*     1042 */  void * pvDummy1 ;
+/*     1043 */  StaticListItem_t xDummy2 ;
+/*     1044 */  TickType_t xDummy3 ;
+/*     1045 */  UBaseType_t uxDummy4 ;
+/*     1046 */  void * pvDummy5 [ 2 ] ;
+/*     1055 */  } StaticTimer_t ;
